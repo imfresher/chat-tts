@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    app:
+        image: node:lts
+        restart: always
+        tty: true
+        volumes:
+            - ./:/var/www/app
+            - node_packages:/var/www/app/node_modules
+        working_dir: /var/www/app
+        ports:
+            - "3000:3000"
+            - "4000:4000"
+            - "5173:5173"
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+
+volumes:
+    node_packages:
