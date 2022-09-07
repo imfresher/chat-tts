@@ -9,10 +9,12 @@
   },
   "main": "server/src/index.js",
   "scripts": {
-    "client": "vite --config client/vite.config.js",
-    "server": "nodemon"
+    "client": "vite --host=0.0.0.0 --config client/vite.config.js",
+    "server": "nodemon",
+    "build:client": "vite --config client/vite.config.js build"
   },
   "dependencies": {
+    "@fastify/static": "^6.5.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.2",
     "esm": "^3.2.25",
